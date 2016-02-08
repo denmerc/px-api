@@ -1,0 +1,23 @@
+type project
+owners
+    dm
+authors 
+    dm
+projectUrl
+    http://github.com/AdvancedPricingLogic/px
+iconUrl
+    https://raw.githubusercontent.com/AdvancedPricingLogic/px/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/AdvancedPricingLogic/px/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    px
+summary
+    px
+description
+    px
+
+

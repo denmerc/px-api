@@ -1,4 +1,4 @@
-﻿namespace FSharp.ProjectTemplate
+namespace px
 
 /// Documentation for my library
 ///
