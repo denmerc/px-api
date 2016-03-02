@@ -5,8 +5,8 @@ open FSharp.Data.Sql
 open System.Data
 open System.IO
 
-//[<Literal>]
-//let resolutionFolder = @"C:\ws\px\packages\Npgsql.3.0.5\lib\net45"
+[<Literal>]
+let resolutionFolder = @"C:\ws\px\packages\Npgsql.3.0.5\lib\net45"
 
 
 //let resolutionFolder = System.IO.Path.Combine(__SOURCE_DIRECTORY__ , @"packages/Npgsql.3.0.5/lib/net45")
@@ -25,15 +25,18 @@ let useOptTypes = true
 [<Literal>]
 let owner  = @"postgres' OR table_schema = 'PX_Main' or table_schema = 'PX_Stage' or table_schema = 'PX_Tracking''"
 
-type sql = SqlDataProvider<Common.DatabaseProviderTypes.POSTGRESQL, connStr, ResolutionPath = resolutionFolder, UseOptionTypes=true, Owner=owner>
+type sql = SqlDataProvider<Common.DatabaseProviderTypes.POSTGRESQL, connStr, ResolutionPath = resolutionFolder, 
+                            UseOptionTypes=true, Owner=owner, 
+                            CaseSensitivityChange=Common.CaseSensitivityChange.ORIGINAL>
 //type sql = SqlDataProvider<Common.DatabaseProviderTypes.POSTGRESQL, connStr, ResolutionPath = resolutionFolder>
 
 let ctx = sql.GetDataContext()
-ctx.PxMain.AnalyticCluster.Individuals
+
+
 
 let employeesFirstNameIdProj = 
     query {
-        for emp in ctx.PxMain.Analytic. do
+        for emp in ctx.PxMain.Analytic do
         select emp
     } |> Seq.toList
 

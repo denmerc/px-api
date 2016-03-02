@@ -1,3 +1,5 @@
+SQLProvider
+npgsql
 group Test
 NUnit
 NUnit.Runners

@@ -1,4 +1,8 @@
 source https://nuget.org/api/v2
+nuget FSharp.Data
+nuget Newtonsoft.Json
+nuget npgsql
+nuget SQLProvider
 
 group Build
   source https://nuget.org/api/v2
